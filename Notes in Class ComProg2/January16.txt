@@ -1,0 +1,17 @@
+January 16, 2024
+
+-"assumption is that you are true beginners in Java"
+-Do not go out of bounds in terms of what you are allowed to use in the programs you will be submitting.
+-20% Quizzes, 30% Lab Exer., 50% Exam
+
+Easy Quizzes have 40 to 60 items, Harder Quizzes have around 100+ items. 
+
+Exam has 2 parts. Sage exam browser exam. Present a snippet of code and tell your output of the code.
+There is a EASY and HARD programming exam.
+
+Course Learning Plan
+Orientation -> Basic Elements of Java -> Introduction to Objects and i/O -> Sentece Structures -> 
+
+
+TODO:
+Download JDK, then either NEtbeans or IntelliJ Communinity Edition as an IDE for programming in Java
