@@ -1,25 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.sonzasis;
+
+/**
+ *
+ * @author csonza
+ */
 import java.util.Scanner;
 
-
-public class SIS {
+public class SonzaSIS {    
+    static void displayGrades(String display, double gradeUnitSum, double calcQPI, double qualityPointIndex) {
+        border();
+        displayGradesHeader();
+        System.out.println("Hi, User!\nHere are your Grades:");
+        border();
+        tableHeader();
+            
+        System.out.println(display);
+        border();
+        System.out.println((double)gradeUnitSum + "/" + calcQPI + "\t\tQPI: " + qualityPointIndex);
+    }
     static void border(){
         System.out.println("=-=-=-=-=-=-=-=--=-=-=-=-=");
     }
-    
     static void tableHeader(){
         System.out.println("COURSE NAME\t\tGRADE\t#VALUE\tRUN.SUM");
     }
-    
     static void SISHeader(){
         System.out.println("[ Student Information System ]");
     }
-
     static void displayGradesHeader(){
         System.out.println("[ Student Information System ]");
     }
-
+    static void closingProgram() {
+        System.out.println("Thank you for using my program...");
+        System.out.println("Closing Program");
+    }
+    
+    // MAIN PROGRAM
     public static void main(String[] args) {
-        
         try (Scanner input = new Scanner(System.in)) {
             final int UNITS_PER_COURSE = 3;
 
@@ -39,8 +61,8 @@ public class SIS {
 
             /// BEGINNING PAGE 
             
-            border();
             SISHeader();
+            border();
             System.out.print("Enter your Number of Courses:\t");
             numEnrolCourses = input.nextInt();
             System.out.println("NOTE: Only allowable Grades are the following\n(A, B, C, D, E, F, W)");
@@ -112,18 +134,8 @@ public class SIS {
             qualityPointIndex = (double)gradeUnitSum / calcQPI;
 
         /// DISPLAY TABLE AREA
-            border();
-            displayGradesHeader();
-            System.out.println("Hi, User!\nHere are your Grades:");
-            border();
-            tableHeader();
-            System.out.println(display);
-            border();
-            System.out.println((double)gradeUnitSum + "/" + calcQPI + "\t\tQPI: " + qualityPointIndex);
-
-            System.out.println("Thank you for using my program...");
-            System.out.println("Closing Program");
-                    
+            displayGrades(display, gradeUnitSum, calcQPI, qualityPointIndex);
+            closingProgram();
             input.close();
         }
     }
