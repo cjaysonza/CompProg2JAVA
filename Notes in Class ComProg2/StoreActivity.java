@@ -62,7 +62,7 @@ public class StoreActivity {
         
         // TAX is turned into a % out of 100
         total = (price1 + price2 + price3);
-        tax = total / (tax);
+        tax = total * (tax);
         
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println("\n" + storeName);
