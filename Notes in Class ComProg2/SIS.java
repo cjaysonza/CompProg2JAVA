@@ -12,36 +12,7 @@ package com.mycompany.sonzasis;
 import java.util.Scanner;
 
 public class SonzaSIS {    
-    static void displayGrades(String display, double gradeUnitSum, double calcQPI, double qualityPointIndex) {
-        border();
-        displayGradesHeader();
-        System.out.println("Hi, User!\nHere are your Grades:");
-        border();
-        tableHeader();
-            
-        System.out.println(display);
-        border();
-        System.out.println((double)gradeUnitSum + "/" + calcQPI + "\t\tQPI: " + qualityPointIndex);
-    }
-    static void border(){
-        System.out.println("=-=-=-=-=-=-=-=--=-=-=-=-=");
-    }
-    static void tableHeader(){
-        System.out.println("COURSE NAME\t\tGRADE\t#VALUE\tRUN.SUM");
-    }
-    static void SISHeader(){
-        System.out.println("[ Student Information System ]");
-    }
-    static void displayGradesHeader(){
-        System.out.println("[ Student Information System ]");
-    }
-    static void closingProgram() {
-        System.out.println("Thank you for using my program...");
-        System.out.println("Closing Program");
-    }
-    
-    // MAIN PROGRAM
-    public static void main(String[] args) {
+    static void displayMain() {
         try (Scanner input = new Scanner(System.in)) {
             final int UNITS_PER_COURSE = 3;
 
@@ -138,5 +109,38 @@ public class SonzaSIS {
             closingProgram();
             input.close();
         }
+    }
+    
+    static void displayGrades(String display, double gradeUnitSum, double calcQPI, double qualityPointIndex) {
+        border();
+        displayGradesHeader();
+        System.out.println("Hi, User!\nHere are your Grades:");
+        border();
+        tableHeader();
+            
+        System.out.println(display);
+        border();
+        System.out.println((double)gradeUnitSum + "/" + calcQPI + "\t\tQPI: " + qualityPointIndex);
+    }
+    static void border(){
+        System.out.println("=-=-=-=-=-=-=-=--=-=-=-=-=");
+    }
+    static void tableHeader(){
+        System.out.println("COURSE NAME\t\tGRADE\t#VALUE\tRUN.SUM");
+    }
+    static void SISHeader(){
+        System.out.println("[ Student Information System ]");
+    }
+    static void displayGradesHeader(){
+        System.out.println("[ Student Information System ]");
+    }
+    static void closingProgram() {
+        System.out.println("Thank you for using my program...");
+        System.out.println("Closing Program");
+    }
+    
+    // MAIN PROGRAM
+    public static void main(String[] args) {
+        displayMain();
     }
 }
