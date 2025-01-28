@@ -12,7 +12,12 @@ public class SonzaJan24 {
         
         // double something = 1.5;
 
-        // String name = "Alejandro";
+        // S
+        
+        // String number1 = "8654";
+        // String double1 = "5678.123";
+        // int num1 = Integer.parseInt(number1);
+        // System.out.println(num1);tring name = "Alejandro";
         // int age = 21;
         // double height = 5.8;
         // double weight = 65.43;
@@ -23,11 +28,6 @@ public class SonzaJan24 {
         // "I weigh %.4fKGs and I am %.2f-ft. tall", name, age, weight, height);
 
         /// PARSING NUMERIC STRINGS
-        
-        // String number1 = "8654";
-        // String double1 = "5678.123";
-        // int num1 = Integer.parseInt(number1);
-        // System.out.println(num1);
 
         // double doub1 = Double.parseDouble(double1);
         // System.out.println(doub1);
@@ -72,8 +72,10 @@ public class SonzaJan24 {
         height = JOptionPane.showInputDialog("Enter your Height: ");
         HEIGHT = Double.parseDouble(height);
 
-        outputMessage = String.format("Hi there, I am %s!%nMy full name is " + firstName + " " + middleName.toUpperCase().charAt(0) + ". " + lastName + 
-        ".%nI am %d-years old, I weigh %.3fKGs and stand currently at %.2f ft. tall", firstName, AGE, WEIGHT, HEIGHT);
+        // outputMessage = String.format("Hi there, I am %s!%nMy full name is " + firstName + " " + middleName.toUpperCase().charAt(0) + ". " + lastName + 
+        // ".%nI am %d-years old, I weigh %.3fKGs and stand currently at %.2f ft. tall", firstName, AGE, WEIGHT, HEIGHT);
+
+        outputMessage = String.format("Hi there, I am %s!%nMy full name is %s %s %s.%nI am %d-years old, I weigh %.3fKGs and stand currently at %.2f ft. tall", firstName, firstName, middleName.toUpperCase().charAt(0), lastName, AGE, WEIGHT, HEIGHT);
 
         JOptionPane.showMessageDialog(null, outputMessage);
         System.out.println(outputMessage);
