@@ -1,0 +1,240 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.sonzamar6.calculator;
+
+/**
+ *
+ * @author csonza
+ */
+
+import java.util.Scanner;
+//import javax.swing.*;
+
+public class SonzaMar6Calculator {
+
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        boolean running = true;
+        while (running) {
+            System.out.print(
+            "What would you like to do?\n" +
+            "1. Perform operations with two numbers \n" + 
+            "2. Introduce Yourself \n" + 
+            "3. Exit Program\n" +
+            "-> " 
+            );
+            
+            String userInput = scanner.nextLine().toUpperCase();
+
+            switch(userInput.charAt(0)) {
+                case '1': // Calculator
+                    handleUserInput(scanner);
+                    break;
+                case '2': // Introduce yourself
+                    // performOperationsWithThreeNumbers(scanner);
+                    System.out.println("This feature is not available yet.");
+                    break;
+
+                case '3': // Introduce yourself
+                    System.out.println("Exiting Program");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid input. Please enter 1 or 2.");
+            }
+        }
+        scanner.close();
+    }
+
+    // Get user input for CALCULATOR
+    public static void handleUserInput(Scanner scanner) {
+        System.out.println("Enter first number (int or double):");
+
+        if (scanner.hasNextInt()) {
+            int num1 = scanner.nextInt();
+            performOperationsWithIntFirst(num1, scanner);
+        } else if (scanner.hasNextDouble()) {
+            double num1 = scanner.nextDouble();
+            performOperationsWithDoubleFirst(num1, scanner);
+        } else {
+            System.out.println("Invalid input. Please restart and enter a valid number.");
+            scanner.next(); // Clear invalid input
+        }
+    }
+    
+
+    // IF First input is INT
+    public static void performOperationsWithIntFirst(int num1, Scanner scanner) {
+        System.out.println("Enter second number (int or double):");
+
+        if (scanner.hasNextInt()) {
+            int num2 = scanner.nextInt();
+            printIntOperations(num1, num2);
+        } else if (scanner.hasNextDouble()) {
+            double num2 = scanner.nextDouble();
+            printMixedOperations(num1, num2);
+        } else {
+            System.out.println("Invalid input.");
+        }
+    }
+
+    // IF First input is DOUBLE
+    public static void performOperationsWithDoubleFirst(double num1, Scanner scanner) {
+        System.out.println("Enter second number (int or double):");
+
+        if (scanner.hasNextInt()) {
+            int num2 = scanner.nextInt();
+            printMixedOperations(num2, num1); // Swap to maintain double first
+        } else if (scanner.hasNextDouble()) {
+            double num2 = scanner.nextDouble();
+            printDoubleOperations(num1, num2);
+        } else {
+            System.out.println("Invalid input.");
+        }
+    }
+
+    // IF Second input is INT
+    public static void printIntOperations(int a, int b) {
+       Scanner scanner = new Scanner(System.in);
+       boolean escape = false;
+       while(!escape) {
+       System.out.println(
+            "What operation would you like to perform? \n" +
+            "+ Addition\n" +
+            "- Subtraction\n" +
+            "* Multiplication\n" +
+            "/ Multiplication"
+            );
+       
+        String operation = scanner.nextLine().toUpperCase();
+
+        switch(operation.charAt(0)) {
+            case '+':
+                System.out.println("Addition: " + (a + b));
+                escape = true;
+                break;
+            case '-':
+                System.out.println("Subtraction: " + (a - b));
+                                escape = true;
+
+                break;
+            case '*':
+                System.out.println("Multiplication: " + (a * b));
+                                escape = true;
+
+                break;
+            case '/':
+                if (b != 0) {
+                    System.out.println("Division: " + (a / b));
+                                    escape = true;
+
+                } else {
+                    System.out.println("Division: Cannot divide by zero");
+                                    escape = true;
+
+                }
+                break;
+            default:
+                System.out.println("Invalid input. Please enter +, -, *, or /.");
+                break;
+        }
+    }
+    }
+
+    // IF Second input is DOUBLE
+    public static void printDoubleOperations(double a, double b) {
+          Scanner scanner = new Scanner(System.in);
+       boolean escape = false;
+       while(!escape) {
+       System.out.println(
+            "What operation would you like to perform? \n" +
+            "+ Addition\n" +
+            "- Subtraction\n" +
+            "* Multiplication\n" +
+            "/ Multiplication"
+            );
+       
+        String operation = scanner.nextLine().toUpperCase();
+
+        switch(operation.charAt(0)) {
+            case '+':
+                System.out.println("Addition: " + (a + b));
+                escape = true;
+                break;
+            case '-':
+                System.out.println("Subtraction: " + (a - b));
+                                escape = true;
+
+                break;
+            case '*':
+                System.out.println("Multiplication: " + (a * b));
+                                escape = true;
+
+                break;
+            case '/':
+                if (b != 0) {
+                    System.out.println("Division: " + (a / b));
+                                    escape = true;
+
+                } else {
+                    System.out.println("Division: Cannot divide by zero");
+                                    escape = true;
+
+                }
+                break;
+            default:
+                System.out.println("Invalid input. Please enter +, -, *, or /.");
+                break;
+        }
+    }
+    }
+
+    // IF one input is either double or int
+    public static void printMixedOperations(int intVal, double doubleVal) {
+        Scanner scanner = new Scanner(System.in);
+       boolean escape = false;
+       while(!escape) {
+        System.out.println(
+            "What operation would you like to perform? \n" +
+            "+ Addition\n" +
+            "- Subtraction\n" +
+            "* Multiplication\n" +
+            "/ Multiplication"
+            );
+        String operation = scanner.nextLine().toUpperCase();
+
+        switch(operation.charAt(0)) {
+            case '+':
+                System.out.println("Addition: " + (intVal + doubleVal));
+                 escape = true;
+                break;
+            case '-':
+                System.out.println("Subtraction: " + (intVal - doubleVal));
+                 escape = true;
+                break;
+            case '*':
+                System.out.println("Multiplication: " + (intVal * doubleVal));
+                 escape = true;
+                break;
+            case '/':
+            if (doubleVal != 0) {
+                double resultDiv = intVal / doubleVal;
+                System.out.println("Division: " + resultDiv);
+                 escape = true;
+            } else {
+                System.out.println("Division: Cannot divide by zero");
+                 escape = true;
+            }
+                break;
+            default:
+                System.out.println("Invalid input. Please enter +, -, *, or /.");
+                break;
+        }
+    }
+    }
+}
